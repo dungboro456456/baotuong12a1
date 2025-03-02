@@ -1,0 +1,223 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: lightblue;
+    color: black ;
+    line-height: 1.6;
+}
+/* Tiêu đề với icon */
+.section-content h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: flex; /* Sử dụng flexbox để căn chỉnh icon và tiêu đề */
+    align-items: center; /* Căn giữa icon và văn bản theo chiều dọc */
+}
+
+/* Icon trong tiêu đề */
+.section-content h2 i {
+    margin-right: 10px; /* Khoảng cách giữa icon và tiêu đề */
+    font-size: 32px; /* Kích thước icon */
+    color: #ff6600; /* Màu sắc cho icon */
+}
+
+
+header {
+    background: linear-gradient(135deg, blueviolet,lightblue);
+    color: whitesmoke;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.header-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header h1 {
+    background: linear-gradient(135deg,blueviolet,peru);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+nav a {
+    color: peachpuff;
+    text-decoration: none;
+    margin: 0 1.5rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #b2ebf2;
+}
+
+.content-section {
+    padding: 3rem 2rem;
+    margin: 2rem auto;
+    background-color: #fff;
+    border-radius: 8px
+}
+/* Container của gallery */
+.gallery-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Bộ sưu tập ảnh trong 1 hàng ngang */
+/* Bộ sưu tập ảnh trong 1 hàng ngang */
+.gallery {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.gallery-item {
+    flex: 0 0 auto;
+    width: 200px; /* Chiều rộng của mỗi ảnh */
+    margin-right: 10px; /* Khoảng cách giữa các ảnh */
+    text-align: center;
+    overflow: hidden;  /* Đảm bảo các phần của ảnh vượt ra ngoài không được hiển thị */
+}
+
+.gallery-item img {
+    width: 100%; /* Giảm kích thước ảnh để vừa với phần tử cha */
+    height: 100%;  /* Đảm bảo ảnh không bị méo hoặc kéo dài */
+    object-fit: cover;  /* Cắt ảnh để đảm bảo nó vừa với khung */
+    border-radius: 8px;
+}
+
+.gallery-caption {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+}
+
+
+/* Nút bấm chuyển đổi */
+.navigation {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.prev, .next {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center; /* Căn giữa các biểu tượng */
+}
+
+.prev i, .next i {
+    font-size: 20px;  /* Kích thước của biểu tượng */
+    margin: 0 10px;   /* Khoảng cách giữa biểu tượng và chữ */
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+/* Tắt nút khi chưa tải xong */
+.prev:disabled, .next:disabled {
+    background-color: rgba(0, 0, 0, 0.3);
+    cursor: not-allowed;
+}
+/* Video container có các video hiển thị đều và dễ nhìn */
+.video-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Mỗi video item sẽ có tỷ lệ khung hình cố định */
+.video-item {
+    width: 100%;
+    max-width: 480px;  /* Giới hạn chiều rộng tối đa */
+    text-align: center;
+    position: relative;  /* Cần thiết cho việc sử dụng padding-bottom để tạo tỷ lệ */
+    overflow: hidden;    /* Ẩn phần dư thừa nếu video không vừa */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Thêm hiệu ứng bóng đổ */
+}
+
+/* Tạo tỷ lệ khung hình cho video (16:9) */
+.video-item::before {
+    content: "";
+    display: block;
+    padding-top: 56.25%; /* Tạo tỷ lệ 16:9 (9/16 = 0.5625, tức là 56.25%) */
+}
+
+.video-item video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;   /* Chiều rộng video 100% của container */
+    height: 100%;  /* Chiều cao video 100% của container */
+    object-fit: cover;  /* Đảm bảo video bao phủ hoàn toàn vùng chứa */
+    border-radius: 8px;
+}
+
+.video-item p {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Kỷ niệm section */
+.memory {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.memory h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.memory p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Responsive design cho thiết bị di động */
+@media (max-width: 768px) {
+    .video-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .video-item {
+        width: 90%; /* Tự động điều chỉnh chiều rộng trên màn hình nhỏ */
+        max-width: none;
+    }
+
+    .memory {
+        padding: 15px;
+    }
+}
+    
